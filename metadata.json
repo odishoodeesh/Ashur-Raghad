@@ -1,0 +1,6 @@
+{
+  "name": "آشور & رغد",
+  "description": "البوابة الرومانسية السحرية المخصصة لتوثيق قصة حب آشور ورغد والعد التنازلي لذكرى زواجهما في ١١ يونيو ٢٠٢٦",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
