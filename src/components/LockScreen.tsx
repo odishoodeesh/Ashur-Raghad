@@ -7,6 +7,7 @@ import React, { useState, useEffect, FormEvent } from "react";
 import { Lock, Heart, KeyRound, Sparkles, AlertCircle } from "lucide-react";
 import AudioEngine from "./AudioEngine";
 import BackgroundHearts from "./BackgroundHearts";
+import { parseSafeDate } from "../types";
 
 interface LockScreenProps {
   onUnlock: () => void;
@@ -46,7 +47,7 @@ export default function LockScreen({
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const difference = +new Date(targetDateTime) - +new Date();
+      const difference = +parseSafeDate(targetDateTime) - +new Date();
       
       if (difference <= 0) {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isOver: true });

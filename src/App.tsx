@@ -15,7 +15,7 @@ import LoveLetter from "./components/LoveLetter";
 import GiftBox from "./components/GiftBox";
 import RaghadJournal from "./components/RaghadJournal";
 import AudioEngine from "./components/AudioEngine";
-import { ThemeColor } from "./types";
+import { ThemeColor, parseSafeDate } from "./types";
 
 export default function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -84,7 +84,7 @@ export default function App() {
     if (!isUnlocked) return;
 
     const calculateLoveTime = () => {
-      const diffMs = +new Date() - +new Date(startDate);
+      const diffMs = +new Date() - +parseSafeDate(startDate);
       if (diffMs <= 0) return;
 
       const msInSecond = 1000;
